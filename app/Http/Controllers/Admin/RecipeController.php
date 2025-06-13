@@ -34,7 +34,7 @@ class RecipeController extends Controller
             'level' => 'required|string',
         ]);
     
-        $data['slug'] = Str::slug($data['title']); // Buat slug dari title
+        $data['slug'] = Str::slug($data['title']);
     
         Recipe::create($data);
     
