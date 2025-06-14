@@ -92,7 +92,6 @@
                   <a href="{{ route('blog.category', $category->slug) }}" 
                     class="{{ isset($currentCategory) && $currentCategory->slug === $category->slug ? 'active' : '' }}">
                     {{ $category->title }}
-                    <span class="category-count">({{ $category->posts_count }})</span>
                   </a>
                 </li>
               @endforeach

@@ -995,18 +995,20 @@ textarea:focus {
 }
 
 .post-title {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: #1f2937;
     margin-bottom: 15px;
     text-decoration: none;
     display: block;
-    transition: color 0.3s ease;
+    transition: color 1s ease;
     line-height: 1.4;
 }
 
 .post-title:hover {
     color: #1c8314;
+    font-size: 1.35rem;
+    font-weight: 700;
 }
 
 .post-excerpt {
