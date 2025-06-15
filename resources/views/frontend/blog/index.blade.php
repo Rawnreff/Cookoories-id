@@ -98,24 +98,6 @@
             </ul>
           </div>
           
-          <!-- Popular Posts Widget -->
-          <div class="single-widget popular-posts">
-            <h6>Popular Posts</h6>
-            <div class="popular-post">
-              <img src="https://via.placeholder.com/80" alt="Popular post">
-              <div class="post-content">
-                <a href="#" class="post-title">Top 10 Recipes for Summer</a>
-                <span class="post-date">June 15, 2023</span>
-              </div>
-            </div>
-            <div class="popular-post">
-              <img src="https://via.placeholder.com/80" alt="Popular post">
-              <div class="post-content">
-                <a href="#" class="post-title">Healthy Breakfast Ideas</a>
-                <span class="post-date">May 28, 2023</span>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

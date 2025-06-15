@@ -1007,7 +1007,7 @@ textarea:focus {
 
 .post-title:hover {
     color: #1c8314;
-    font-size: 1.35rem;
+    font-size: 1.3rem;
     font-weight: 700;
 }
 
@@ -1201,43 +1201,6 @@ textarea:focus {
 .categories-list li a:hover .category-count,
 .categories-list li a.active .category-count {
     color: #1c8314;
-}
-
-/* Popular Posts */
-.popular-posts {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.popular-post {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
-
-.popular-post img {
-    width: 60px;
-    height: 60px;
-    border-radius: 8px;
-    object-fit: cover;
-}
-
-.popular-post .post-content {
-    display: flex;
-    flex-direction: column;
-}
-
-.popular-post .post-title {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 5px;
-    color: #1f2937;
-}
-
-.popular-post .post-date {
-    font-size: 12px;
-    color: #6b7280;
 }
 
 /* Responsive Design */
