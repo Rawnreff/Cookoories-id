@@ -1566,13 +1566,6 @@ textarea:focus {
   opacity: 0;
 }
 
-/* Add delay for each item */
-@for $i from 1 through 6 {
-  .single-small-receipe-area:nth-child(#{$i}) {
-    animation-delay: $i * 0.1s;
-  }
-}
-
 /* :: 11.0 Quote Area - Modernized */
 .quote-subscribe-adds {
   position: relative;
