@@ -145,4 +145,34 @@
       </div>
     </section>
     <!-- ##### Quote Subscribe Area End ##### -->
+
+    <!-- Embedded JavaScript for CTA Animation -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Activate CTA animation
+        const ctaSection = document.querySelector('.cta-area');
+        if (ctaSection) {
+          ctaSection.classList.add('active');
+        }
+
+        // Optional: Intersection Observer for scroll animations
+        const animateOnScroll = (entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animated');
+              observer.unobserve(entry.target);
+            }
+          });
+        };
+
+        const observer = new IntersectionObserver(animateOnScroll, {
+          threshold: 0.1
+        });
+
+        // Observe all elements with data-animation attribute
+        document.querySelectorAll('[data-animation]').forEach(el => {
+          observer.observe(el);
+        });
+      });
+    </script>
 @endsection
