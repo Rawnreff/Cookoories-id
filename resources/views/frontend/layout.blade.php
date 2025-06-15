@@ -176,6 +176,26 @@
               Copyright &copy;
               <script>
                 document.write(new Date().getFullYear());
+
+                // Scroll Up Button
+                window.addEventListener('scroll', function() {
+                  const scrollUp = document.getElementById('scrollUp');
+                  if (window.pageYOffset > 300) {
+                    scrollUp.classList.add('show');
+                    scrollUp.classList.add('pulse');
+                  } else {
+                    scrollUp.classList.remove('show');
+                    scrollUp.classList.remove('pulse');
+                  }
+                });
+
+                document.getElementById('scrollUp').addEventListener('click', function(e) {
+                  e.preventDefault();
+                  window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                  });
+                });
               </script>
               All rights reserved
             </p>

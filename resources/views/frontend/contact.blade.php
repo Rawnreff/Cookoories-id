@@ -19,7 +19,7 @@
     <!-- ##### Breadcumb Area End ##### -->
 
     <!-- ##### Contact Form Area Start ##### -->
-    <div class="contact-area section-padding-0-80 mt-5">
+    <div class="contact-area section-padding-0-70">
       <div class="container">
         <div class="row">
           <div class="col-12">

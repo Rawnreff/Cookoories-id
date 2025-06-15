@@ -45,7 +45,6 @@
           <!-- Single Cool Fact -->
           <div class="col-12 col-sm-6 col-lg-3">
             <div class="single-cool-fact">
-              <img src="img/core-img/salad.png" alt="" />
               <h3><span class="counter">1287</span></h3>
               <h6>Amazing recipes</h6>
             </div>
@@ -54,7 +53,6 @@
           <!-- Single Cool Fact -->
           <div class="col-12 col-sm-6 col-lg-3">
             <div class="single-cool-fact">
-              <img src="img/core-img/hamburger.png" alt="" />
               <h3><span class="counter">25</span></h3>
               <h6>Burger recipes</h6>
             </div>
@@ -63,7 +61,6 @@
           <!-- Single Cool Fact -->
           <div class="col-12 col-sm-6 col-lg-3">
             <div class="single-cool-fact">
-              <img src="img/core-img/rib.png" alt="" />
               <h3><span class="counter">471</span></h3>
               <h6>Meat recipes</h6>
             </div>
@@ -72,7 +69,6 @@
           <!-- Single Cool Fact -->
           <div class="col-12 col-sm-6 col-lg-3">
             <div class="single-cool-fact">
-              <img src="img/core-img/pancake.png" alt="" />
               <h3><span class="counter">326</span></h3>
               <h6>Desert recipes</h6>
             </div>
@@ -81,7 +77,6 @@
 
         <div class="row">
           <div class="col-12">
-            <img class="mb-70" src="img/bg-img/about.png" alt="" />
             <p class="text-center">
             With a variety of recipes that can be accessed for free, Cookoories is the right place for anyone who wants to explore the culinary world. From traditional dishes to modern creations, we provide inspiration for every special moment in your kitchen. Happy cooking and sharing happiness with Cookoories!
             </p>
