@@ -74,11 +74,7 @@
             <div class="cta-content text-center">
               <h2>Gluten Free Recipes</h2>
               <p>
-                Fusce nec ante vitae lacus aliquet vulputate. Donec scelerisque
-                accumsan molestie. Vestibulum ante ipsum primis in faucibus orci
-                luctus et ultrices posuere cubilia Curae; Cras sed accumsan
-                neque. Ut vulputate, lectus vel aliquam congue, risus leo
-                elementum nibh
+                Gluten-free recipes are dishes made without ingredients that contain gluten, such as wheat, barley, and rye. They are ideal for individuals with celiac disease or gluten sensitivity. These recipes offer healthy and delicious alternatives using natural ingredients like almond flour, rice flour, or certified gluten-free oats.
               </p>
               <a href="{{ route('recipe') }}" class="btn delicious-btn"
                 >Discover all the recipes</a
@@ -99,9 +95,9 @@
           <div class="col-12 col-sm-6 col-lg-4">
             <div class="single-small-receipe-area d-flex">
               <!-- Receipe Thumb -->
-              <div class="receipe-thumb">
+              <div class="receipe-thumb" data-date="{{ date_format($post->created_at, 'M d, Y') }}">
                 <a href="{{ route('blog.show', $post->slug) }}">
-                  <img src="{{  asset("storage/" . $post->banner) }}" alt="" />
+                  <img src="{{ asset('storage/' . $post->banner) }}" alt="" />
                 </a>
               </div>
               <!-- Receipe Content -->

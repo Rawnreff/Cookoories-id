@@ -306,18 +306,22 @@ textarea:focus {
   color: #ffffff;
   border: none;
   border-left: 3px solid #1c8314;
-  border-radius: 50px; /* Changed from 15px to 50px for modern rounded look */
+  border-radius: 50px;
   padding: 0 30px;
   font-size: 16px;
-  line-height: 58px;
+  line-height: 30px;
   font-weight: 600;
   transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-  text-transform: uppercase; /* Changed from capitalize to uppercase for modern look */
+  text-transform: uppercase;
   background-color: #40ba37;
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(64, 186, 55, 0.3);
   letter-spacing: 1px;
+  text-align: center; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Hover/Focus Effects with Modern Animations */
@@ -394,10 +398,8 @@ textarea:focus {
 @media only screen and (max-width: 767px) {
   .delicious-btn {
     height: 40px;
-    line-height: 39px;
-    min-width: 120px;
+    line-height: 40px;
     padding: 0 20px;
-    font-size: 14px;
   }
   .delicious-btn.btn-4 {
     height: 40px;
@@ -1432,150 +1434,297 @@ textarea:focus {
   }
 }
 
-/* :: 10.0 Small Receipe Area */
+/* :: 10.0 Small Receipe Area - Modernized */
 .small-receipe-area {
   position: relative;
   z-index: 1;
-  padding-bottom: 30px; }
+  padding: 80px 0;
+  background-color: #f9f9f9;
+}
 
-  .single-small-receipe-area {
-    position: relative;
-    z-index: 1;
-    margin-bottom: 50px;
-    display: flex;
-    align-items: flex-start; /* Atur posisi vertikal */
-    min-height: 120px; /* Atur tinggi konsisten, bisa disesuaikan */
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.05);
-  }
-  
-  /* Ukuran tetap untuk gambar */
-  .single-small-receipe-area .receipe-thumb {
-    flex: 0 0 100px;
-    max-width: 100px;
-    height: 100px;
-    padding-right: 20px;
-  }
-  
-  .single-small-receipe-area .receipe-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-  
-  /* Pastikan konten mengisi sisa ruang */
-  .single-small-receipe-area .receipe-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .single-small-receipe-area .receipe-content span {
-    font-size: 12px;
-    display: block;
-    color: #40ba37; }
-  .single-small-receipe-area .receipe-content a {
-    display: block; }
-    .single-small-receipe-area .receipe-content a h5 {
-      color: #474747;
-      font-size: 18px;
-      margin-bottom: 5px;
-      -webkit-transition-duration: 500ms;
-      transition-duration: 500ms; }
-      @media only screen and (min-width: 992px) and (max-width: 1199px) {
-        .single-small-receipe-area .receipe-content a h5 {
-          font-size: 16px; } }
-      .single-small-receipe-area .receipe-content a h5:hover, .single-small-receipe-area .receipe-content a h5:focus {
-        color: #40ba37; }
-  .single-small-receipe-area .receipe-content .ratings i {
-    font-size: 11px;
-    color: #fbb710;
-    display: inline-block;
-    padding: 0 1px; }
-  .single-small-receipe-area .receipe-content p {
-    font-size: 12px;
-    margin-bottom: 0;
-    color: #9b9b9b; }
+.single-small-receipe-area {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
 
-/* :: 11.0 Quote Area */
+.single-small-receipe-area:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* Image with hover effect */
+.receipe-thumb {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.receipe-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.single-small-receipe-area:hover .receipe-thumb img {
+  transform: scale(1.05);
+}
+
+/* Date badge */
+.receipe-thumb::after {
+  content: attr(data-date);
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(64, 186, 55, 0.9);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Content area */
+.receipe-content {
+  padding: 20px;
+  position: relative;
+}
+
+.receipe-content span {
+  display: block;
+  font-size: 12px;
+  color: #40ba37;
+  margin-bottom: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.receipe-content h5 {
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.receipe-content a:hover h5 {
+  color: #40ba37;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .receipe-thumb {
+    height: 180px;
+  }
+  
+  .receipe-content {
+    padding: 15px;
+  }
+  
+  .receipe-content h5 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .small-receipe-area {
+    padding: 60px 0;
+  }
+  
+  .receipe-thumb {
+    height: 160px;
+  }
+  
+  .receipe-content h5 {
+    font-size: 15px;
+  }
+}
+
+/* Animation for entry */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.single-small-receipe-area {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* Add delay for each item */
+@for $i from 1 through 6 {
+  .single-small-receipe-area:nth-child(#{$i}) {
+    animation-delay: $i * 0.1s;
+  }
+}
+
+/* :: 11.0 Quote Area - Modernized */
+.quote-subscribe-adds {
+  position: relative;
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
 .quote-area {
   position: relative;
   z-index: 1;
-  border: 10px solid #40ba37;
-  padding: 40px 25px;
-  margin-bottom: 80px; }
-  .quote-area span {
-    font-size: 48px;
-    font-style: italic;
-    margin-bottom: 30px;
-    display: block;
-    color: #40ba37;
-    line-height: 1; }
-  .quote-area h4 {
-    font-size: 24px;
-    line-height: 1.5;
-    font-style: italic;
-    margin-bottom: 40px;
-    color: #474747; }
-    @media only screen and (min-width: 992px) and (max-width: 1199px) {
-      .quote-area h4 {
-        font-size: 20px; } }
-  .quote-area p {
-    color: #474747;
-    font-size: 16px;
-    margin-bottom: 50px; }
-  .quote-area .date-comments .date {
-    font-size: 12px;
-    color: #40ba37; }
-  .quote-area .date-comments .comments {
-    font-size: 12px;
-    color: #9b9b9b; }
+  padding: 60px 40px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: all 0.4s ease;
+  overflow: hidden;
+  text-align: center;
+}
 
-/* :: 12.0 Newsletter Area */
-.newsletter-area {
+.quote-area::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to bottom, #40ba37, #1c8314);
+}
+
+.quote-area:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.quote-area span {
+  font-size: 72px;
+  font-style: italic;
+  margin-bottom: 20px;
+  display: block;
+  color: #40ba37;
+  line-height: 0.8;
+  opacity: 0.3;
   position: relative;
-  z-index: 1;
-  margin-bottom: 80px; }
-  .newsletter-area h4 {
-    font-size: 24px;
-    margin-bottom: 50px;
-    display: block;
-    color: #474747; }
-    @media only screen and (min-width: 992px) and (max-width: 1199px) {
-      .newsletter-area h4 {
-        font-size: 20px; } }
+  z-index: -1;
+}
 
-.newsletter-form {
-  padding: 30px 15px 100px; }
-  .newsletter-form form input {
-    width: 100%;
-    height: 60px;
-    border: none;
-    background-color: #ffffff;
-    color: #9b9b9b;
-    font-size: 12px;
-    font-style: italic;
-    border-left: 3px solid #1c8314;
-    padding: 0 20px;
-    margin-bottom: 25px; }
-  .newsletter-form p {
-    margin-top: 30px;
-    color: #ffffff;
-    font-size: 12px;
-    margin-bottom: 0;
-    font-style: italic; }
+.quote-area h4 {
+  font-size: 28px;
+  line-height: 1.6;
+  font-weight: 500;
+  margin-bottom: 30px;
+  color: #333;
+  position: relative;
+  padding-bottom: 20px;
+}
 
-/* :: 13.0 Delicious Adds */
+.quote-area h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(to right, #40ba37, #1c8314);
+}
+
+.quote-area p {
+  color: #40ba37;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 .delicious-add {
   position: relative;
   z-index: 1;
-  margin-bottom: 80px; }
-  .delicious-add img {
-    width: 100%; }
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: all 0.4s ease;
+  height: 100%;
+}
+
+.delicious-add:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.delicious-add img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.delicious-add:hover img {
+  transform: scale(1.03);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1199px) {
+  .quote-area h4 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 991px) {
+  .quote-area {
+    margin-bottom: 40px;
+  }
+  
+  .quote-area h4 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 767px) {
+  .quote-subscribe-adds {
+    padding: 60px 0;
+  }
+  
+  .quote-area {
+    padding: 40px 20px;
+  }
+  
+  .quote-area h4 {
+    font-size: 20px;
+  }
+  
+  .quote-area span {
+    font-size: 60px;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.quote-area, .delicious-add {
+  animation: fadeIn 0.8s ease-out forwards;
+}
 
 /* :: 14.0 Blog Area */
 /* Blog Area */
