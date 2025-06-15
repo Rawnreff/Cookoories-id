@@ -168,7 +168,7 @@
             <!-- Footer Logo -->
             <div class="footer-logo">
               <a href="#top"
-                ><img style="width: 300px;" src="{{ asset('frontend/img/core-img/logo-cookoories.png') }}" alt=""
+                ><img style="width: 100px;" src="{{ asset('frontend/img/core-img/logo-cookoories.png') }}" alt=""
               /></a>
             </div>
             <!-- Copywrite -->
@@ -183,7 +183,7 @@
         </div>
       </div>
     </footer>
-    <!-- ##### Footer Area Start ##### -->
+    <!-- ##### Footer Area End ##### -->
 
     <!-- ##### All Javascript Files ##### -->
     <!-- jQuery-2.2.4 js -->
