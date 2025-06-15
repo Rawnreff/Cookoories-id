@@ -3,42 +3,32 @@
 @section('content')
 <!-- ##### Hero Area Start ##### -->
 <section class="hero-area">
-      <div class="hero-slides owl-carousel">
-        <!-- Single Hero Slide -->
-        @foreach($latest_recipes as $latest_recipe)
-        <div
-          class="single-hero-slide bg-img"
-          style="background-image: url('{{ asset("storage/" . $latest_recipe->galleries()->first()->path) }}')"
-        >
-          <div class="container h-100">
-            <div class="row h-100 align-items-center">
-              <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-                <div
-                  class="hero-slides-content"   
-                  data-animation="fadeInUp"
-                  data-delay="100ms"
-                >
-                  <h2 data-animation="fadeInUp" data-delay="300ms">
-                    {{ $latest_recipe->title }}
-                  </h2>
-                  <a
-                    href="{{ route('recipe.show',    $latest_recipe->slug) }}"
-                    class="btn mt-5 delicious-btn"
-                    data-animation="fadeInUp"
-                    data-delay="1000ms"
-                    >See Receipe</a
-                  >
-                </div>
-              </div>
+  <div class="hero-slides owl-carousel">
+    @foreach($latest_recipes as $index => $latest_recipe)
+    <div class="single-hero-slide bg-img {{ $index === 0 ? 'active' : '' }}" 
+         style="background-image: url('{{ asset("storage/" . $latest_recipe->galleries()->first()->path) }}')">
+      <div class="container h-100">
+        <div class="row h-100 align-items-center">
+          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+            <div class="hero-slides-content"   
+                 data-animation="fadeInUp"
+                 data-delay="100ms">
+              <h2 data-animation="fadeInUp" data-delay="300ms">
+                {{ $latest_recipe->title }}
+              </h2>
+              <a href="{{ route('recipe.show', $latest_recipe->slug) }}"
+                 class="btn mt-5 delicious-btn"
+                 data-animation="fadeInUp"
+                 data-delay="1000ms">See Recipe</a>
             </div>
           </div>
         </div>
-        @endforeach
-
-        <!-- Single Hero Slide -->
       </div>
+    </div>
+    @endforeach
+  </div>
 </section>
-    <!-- ##### Hero Area End ##### -->
+<!-- ##### Hero Area End ##### -->
 
     <!-- ##### Best Receipe Area Start ##### -->
     <section class="best-receipe-area mt-5">

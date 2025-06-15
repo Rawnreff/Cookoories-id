@@ -825,99 +825,177 @@ textarea:focus {
   background: var(--primary-color);
 }
 
-/* :: 6.0 Welcome Area CSS */
+/* :: 6.0 Modern Hero Area CSS */
 .hero-area {
   position: relative;
   z-index: 1;
-  margin-left: 4%;
-  margin-right: 4%;
+  margin: 0 4%;
+  --primary-accent: #40ba37;
+  --primary-dark: #1c8314;
 }
 
 .hero-slides {
   position: relative;
   z-index: 1;
-  border-radius: 30px; /* border radius konsisten untuk seluruh area */
+  border-radius: 30px;
   overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
 .hero-slides .single-hero-slide {
   width: 100%;
-  height: 620px;
+  height: 720px;
   position: relative;
   z-index: 1;
   border-radius: 30px;
-  overflow: hidden; /* untuk jaga radius saat gambar besar */
+  overflow: hidden;
   background-size: cover;
   background-position: center;
+  display: flex;
+  align-items: center;
+  transition: transform 0.4s ease;
+}
+
+.hero-slides .single-hero-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(24, 24, 24, 0.7) 0%,
+    rgba(24, 24, 24, 0.3) 100%
+  );
+  z-index: 0;
 }
 
 @media only screen and (max-width: 1199px) {
   .hero-slides .single-hero-slide {
-    height: 650px;
+    height: 600px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .hero-slides .single-hero-slide {
+    height: 500px;
   }
 }
 
 .hero-slides .single-hero-slide .hero-slides-content {
   position: relative;
   z-index: 1;
-  padding: 60px 50px;
-  border-radius: 30px;
-  border-left: 4px solid #40ba37;
+  padding: 60px;
+  max-width: 600px;
+  border-left: 4px solid var(--primary-accent);
   background-color: rgba(24, 24, 24, 0.6);
-  margin-left: 60px; 
+  backdrop-filter: blur(10px);
+  margin-left: 60px;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  border-radius: 8px;
+}
+
+.hero-slides .single-hero-slide.active .hero-slides-content {
+  transform: translateY(0);
+  opacity: 0;
+  transition-delay: 0.3s;
 }
 
 @media only screen and (max-width: 767px) {
   .hero-slides .single-hero-slide .hero-slides-content {
     margin-left: 20px;
+    padding: 30px;
+    margin-right: 20px;
   }
 }
 
-
 .hero-slides .single-hero-slide .hero-slides-content h2 {
-  font-size: 30px;
+  font-size: 42px;
   color: #ffffff;
   margin-bottom: 30px;
-  font-weight: 600;
+  font-weight: 700;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@media only screen and (max-width: 991px) {
+  .hero-slides .single-hero-slide .hero-slides-content h2 {
+    font-size: 36px;
+  }
 }
 
 @media only screen and (max-width: 767px) {
   .hero-slides .single-hero-slide .hero-slides-content h2 {
-    font-size: 24px;
+    font-size: 28px;
   }
 }
 
-.hero-slides .single-hero-slide .hero-slides-content p {
+.delicious-btn {
+  display: inline-block;
+  min-width: 160px;
+  height: 50px;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0 30px;
   font-size: 16px;
-  margin-bottom: 50px;
-  color: #ffffff;
+  line-height: 50px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: var(--primary-accent);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(64, 186, 55, 0.3);
 }
 
-/* ====== CUSTOMIZED NEXT & PREV BUTTONS ====== */
+.delicious-btn:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(64, 186, 55, 0.4);
+  color: #fff;
+}
+
+.delicious-btn:active {
+  transform: translateY(0);
+}
+
 .hero-slides .owl-prev,
 .hero-slides .owl-next {
-  background-color: transparent;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  color: #ffffff !important;
   top: 50%;
-  margin-top: -20px;
+  margin-top: -25px;
   left: 2%;
   position: absolute;
   z-index: 10;
   text-align: center;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 14px !important;
+  font-weight: 400;
   opacity: 0;
   visibility: hidden;
-  border-bottom: 3px solid #1c8314;
-  transition: all 0.5s ease;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  border: none !important;
 }
 
 .hero-slides .owl-next {
   left: auto;
   right: 2%;
+}
+
+.hero-slides .owl-prev:hover,
+.hero-slides .owl-next:hover {
+  background-color: var(--primary-accent) !important;
+  transform: scale(1.1);
 }
 
 .hero-slides:hover .owl-prev,
@@ -926,7 +1004,6 @@ textarea:focus {
   visibility: visible;
 }
 
-/* DOTS (optional styling improvement) */
 .hero-slides .owl-dots {
   display: flex;
   position: absolute;
@@ -934,33 +1011,72 @@ textarea:focus {
   width: 100%;
   justify-content: center;
   z-index: 10;
+  gap: 8px;
 }
 
 .hero-slides .owl-dots .owl-dot {
-  width: 10px;
-  height: 10px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   color: transparent;
-  background: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.hero-slides .owl-dots .owl-dot::before {
+  content: attr(data-count);
+  position: absolute;
+  color: #40ba37;
+  z-index: 2;
+}
+
+.hero-slides .owl-dots .owl-dot::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: white;
   border-radius: 50%;
-  margin: 0 5px;
   opacity: 0.4;
   transition: all 0.3s;
 }
 
-.hero-slides .owl-dots .owl-dot.active {
+.hero-slides .owl-dots .owl-dot.active::after {
   background: #40ba37;
   opacity: 1;
+  width: 15px;
+  height: 15px;
 }
 
+[data-animation] {
+  opacity: 0;
+  transition: all 0.5s ease;
+}
 
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .breakpoint-on .classynav ul li.cn-dropdown-item > a::after,
-  .breakpoint-on .classynav ul li.megamenu-item > a::after {
-    top: 10px; } }
-@media only screen and (max-width: 767px) {
-  .breakpoint-on .classynav ul li.cn-dropdown-item > a::after,
-  .breakpoint-on .classynav ul li.megamenu-item > a::after {
-    top: 10px; } }
+[data-animation="fadeInUp"] {
+  transform: translateY(30px);
+}
+
+.hero-slides .single-hero-slide.active [data-animation] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media only screen and (max-width: 575px) {
+  .hero-slides .single-hero-slide .hero-slides-content {
+    padding: 25px;
+  }
+  
+  .delicious-btn {
+    height: 45px;
+    line-height: 45px;
+    font-size: 14px;
+    min-width: 140px;
+  }
+}
 
 /* :: 7.0 Top Catagory Area */
 .single-top-catagory {
