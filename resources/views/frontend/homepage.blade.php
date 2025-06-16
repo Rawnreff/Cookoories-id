@@ -171,4 +171,39 @@
         });
       });
     </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      $(".hero-slides").owlCarousel({
+        items: 1,
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        animateOut: 'fadeOut',
+        dots: true,
+        nav: true,
+        navText: ['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>'],
+        smartSpeed: 800,
+        onInitialized: startProgressBar,
+        onTranslate: resetProgressBar,
+        onTranslated: startProgressBar
+      });
+
+      function startProgressBar() {
+        $(".owl-dot.active .progress").css({
+          width: "100%",
+          transition: "width 5s linear"
+        });
+      }
+
+      function resetProgressBar() {
+        $(".owl-dot.active .progress").css({
+          width: 0,
+          transition: "width 0s linear"
+        });
+      }
+    });
+    </script>
 @endsection
