@@ -3192,6 +3192,39 @@ textarea.form-control {
   }
 }
 
+/* Alert Styles */
+.alert {
+    position: relative;
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.alert-success {
+    color: #0f5132;
+    background-color: #d1e7dd;
+    border-color: #badbcc;
+}
+
+.alert-dismissible {
+    padding-right: 50px;
+}
+
+.alert-dismissible .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 15px 20px;
+    color: inherit;
+    background: transparent;
+    border: 0;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+}
+
 /* Map Area */
 .map-area {
   position: relative;

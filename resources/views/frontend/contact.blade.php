@@ -29,6 +29,17 @@
           </div>
         </div>
 
+        @if(session('success'))
+          <div class="col-12">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              {{ session('success') }}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+        @endif
+
         <div class="row">
           <div class="col-12 col-lg-4">
             <!-- Single Contact Information -->
@@ -49,41 +60,64 @@
           </div>
           <div class="col-lg-8">
             <div class="contact-form-area">
-              <form action="#" method="post">
+              <form action="{{ route('contact.store') }}" method="post">
+                @csrf
                 <div class="row">
                   <div class="col-12 col-lg-6">
                     <input
                       type="text"
-                      class="form-control"
+                      class="form-control @error('name') is-invalid @enderror"
                       id="name"
+                      name="name"
                       placeholder="Name"
+                      value="{{ old('name') }}"
+                      required
                     />
+                    @error('name')
+                      <div class="invalid-feedback d-block">{{ $message }}</div>
+                    @enderror
                   </div>
                   <div class="col-12 col-lg-6">
                     <input
                       type="email"
-                      class="form-control"
+                      class="form-control @error('email') is-invalid @enderror"
                       id="email"
+                      name="email"
                       placeholder="E-mail"
+                      value="{{ old('email') }}"
+                      required
                     />
+                    @error('email')
+                      <div class="invalid-feedback d-block">{{ $message }}</div>
+                    @enderror
                   </div>
                   <div class="col-12">
                     <input
                       type="text"
-                      class="form-control"
+                      class="form-control @error('subject') is-invalid @enderror"
                       id="subject"
+                      name="subject"
                       placeholder="Subject"
+                      value="{{ old('subject') }}"
+                      required
                     />
+                    @error('subject')
+                      <div class="invalid-feedback d-block">{{ $message }}</div>
+                    @enderror
                   </div>
                   <div class="col-12">
                     <textarea
                       name="message"
-                      class="form-control"
+                      class="form-control @error('message') is-invalid @enderror"
                       id="message"
                       cols="30"
                       rows="10"
                       placeholder="Message"
-                    ></textarea>
+                      required
+                    >{{ old('message') }}</textarea>
+                    @error('message')
+                      <div class="invalid-feedback d-block">{{ $message }}</div>
+                    @enderror
                   </div>
                   <div class="col-12 text-center">
                     <button class="btn delicious-btn mt-30" type="submit">

@@ -21,6 +21,7 @@ Route::get('/blog/category/{category:slug}', [\App\Http\Controllers\Frontend\Blo
 Route::get('/blog/{post:slug}',[\App\Http\Controllers\Frontend\BlogController::class, 'show'])->name('blog.show');
 Route::get('/about',[\App\Http\Controllers\Frontend\AboutController::class, 'index'])->name('about');
 Route::get('/contact',[\App\Http\Controllers\Frontend\ContactController::class, 'index'])->name('contact');
+Route::post('/contact', [\App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');
 
 Auth::routes();
 
