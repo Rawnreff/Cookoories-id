@@ -103,7 +103,7 @@
               id="deliciousNav"
             >
               <!-- Logo -->
-              <a class="nav-brand" href="index.html"
+              <a class="nav-brand" href="#"
                 ><img style="width: 300px;" src="{{ asset('frontend/img/core-img/logo-cookoories.png') }}" alt=""
               /></a>
 
